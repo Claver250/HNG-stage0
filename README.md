@@ -78,13 +78,4 @@ A Node.js-based RESTful API that integrates with the Genderize.io external servi
 ---
 
 ### Deployment Note
-The API is live and publicly accessible at: **[INSERT YOUR LIVE RENDER/RAILWAY LINK HERE]**
-
----
-
-### Final Polish Steps:
-1.  **Check `.gitignore`:** Ensure your `.gitignore` contains `node_modules` so you don't push thousands of unnecessary files to GitHub.
-2.  **Verify Link:** Paste your live URL into the README so the grader can find it immediately.
-3.  **About the Math:** Since you are in Nigeria (WAT), ensure your `processed_at` timestamp is coming out in UTC format (which `.toISOString()` handles automatically).
-
-You've done the hard work—congratulations on completing the task! Do you have any other questions before you submit?
+The API is live and publicly accessible at: **[hng-stage0-production-4f48.up.railway.app]**
