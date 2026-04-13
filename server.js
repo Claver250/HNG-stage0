@@ -12,7 +12,7 @@ app.get('/api/classify', async (req, res) => {
     try {
         const {name} = req.query;
 
-        if (!name || name.trim() === '') {
+        if (!name) {
             return res.status(400).json({
                 status: 'error',
                 message: 'No prediction available for the provided name',
@@ -26,15 +26,22 @@ app.get('/api/classify', async (req, res) => {
             });
         }
 
+        if (name.trim() === '') {
+            return res.status(400).json({
+                status: 'error',
+                message: 'No prediction available for the provided name',
+            });
+        }
+
         const response = await axios.get(`https://api.genderize.io?name=${name}`);
         const{gender, probability, count} = response.data;
 
-        // if (!gender || count === 0) {
-        //     return res.json({
-        //         status: 'error',
-        //         message: 'No prediction available for the name'
-        //     });
-        // }
+        if (!gender || count === 0) {
+            return res.json({
+                status: 'error',
+                message: 'No prediction available for the name'
+            });
+        }
 
         const is_confident = probability >= 70 && count >= 100;
         const processed_at = new Date().toISOString();
