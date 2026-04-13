@@ -15,7 +15,7 @@ app.get('/api/classify', async (req, res) => {
         if (!name) {
             return res.status(400).json({
                 status: 'error',
-                message: 'No prediction available for the provided name',
+                message: 'No name provided',
             });
         }
 
@@ -29,7 +29,7 @@ app.get('/api/classify', async (req, res) => {
         if (name.trim() === '') {
             return res.status(400).json({
                 status: 'error',
-                message: 'No prediction available for the provided name',
+                message: 'No prediction available for empty name',
             });
         }
 
@@ -39,7 +39,7 @@ app.get('/api/classify', async (req, res) => {
         if (!gender || count === 0) {
             return res.json({
                 status: 'error',
-                message: 'No prediction available for the name'
+                message: 'No prediction available for the provided name'
             });
         }
 

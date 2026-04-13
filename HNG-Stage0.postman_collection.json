@@ -46,16 +46,9 @@
     },
     {
       "name": "New Request",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
       "request": {
         "method": "GET",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\r\n    \"name\": 123\r\n}"
-        },
         "url": {
           "raw": "localhost:3189/api/classify?name=peter&name=doe",
           "host": [
@@ -104,6 +97,36 @@
             {
               "key": "",
               "value": null
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "status": "error",
+          "message": "No name provided"
+      }
+      ]
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:3189/api/classify?name=ahvgdhvgdovhhc",
+          "host": [
+            "localhost"
+          ],
+          "port": "3189",
+          "path": [
+            "api",
+            "classify"
+          ],
+          "query": [
+            {
+              "key": "name",
+              "value": "ahvgdhvgdovhhc"
             }
           ]
         }
